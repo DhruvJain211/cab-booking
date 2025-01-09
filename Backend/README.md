@@ -30,10 +30,42 @@ POST
       "firstname": "John",
       "lastname": "Doe"
     },
-    "email": "john@example.com",    "password": "examplePassword"
-    "socketId": null,
-    "_id": "60c744fe355215000a875d79",
-    "__v": 0
+    "email": "john@example.com",   
+    "password": "examplePassword"
+  }
+}
+```
+
+# /users/login
+
+**Description**  
+Logs in an existing user
+
+**Method**  
+POST
+
+**Endpoint**  
+`/users/login`
+
+**Request Body**  
+```json
+{
+  "email": "<string, required, must be valid email>",
+  "password": "<string, required, min 6 chars>"
+}
+```
+
+**Example Response**
+```json
+{
+  "token": "exampleGeneratedToken",
+  "user": {
+    "fullname": {
+      "firstname": "John",
+      "lastname": "Doe"
+    },
+    "email": "john@example.com",
+    "password": "examplePassword"
   }
 }
 ```
