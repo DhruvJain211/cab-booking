@@ -69,3 +69,53 @@ POST
   }
 }
 ```
+
+# /users/profile  
+
+**Description**  
+Get current user profile information
+
+**Method**  
+GET 
+
+**Endpoint**  
+`/users/profile`
+
+**Headers**  
+```json
+{
+  "Authorization": "Bearer <token>"
+}
+```
+**Example Response**
+```json
+{
+  "fullname": {
+    "firstname": "John",
+    "lastname": "Doe"
+  },
+  "email": "john@example.com",
+  "socketId": null,
+  "_id": "exampleUserId",
+  "__v": 0
+}
+```
+
+Response Status Codes
+
+200: Profile retrieved successfully
+401: Unauthorized - Invalid or missing token
+
+# /users/logout  
+
+**Description**  
+Logout the current user and blacklist the token provided in cookie or headers 
+
+**Method**  
+GET 
+
+**Endpoint**  
+`/users/logout`
+
+**Headers**  
+Requires a valid JWT token in the Authorization header or cookie 
