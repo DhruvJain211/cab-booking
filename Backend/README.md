@@ -118,4 +118,55 @@ GET
 `/users/logout`
 
 **Headers**  
-Requires a valid JWT token in the Authorization header or cookie 
+Requires a valid JWT token in the Authorization header or cookie
+
+# /captains/register
+
+**Description**  
+Registers a new captain
+
+**Method**  
+POST
+
+**Endpoint**  
+`/captains/register`
+
+**Request Body**  
+```json
+{
+  "fullname": {
+    "firstname": "<string, required, min 3 chars>",
+    "lastname": "<string, optional, min 3 chars>"
+  },
+  "email": "<string, required, must be valid email>",
+  "password": "<string, required, min 6 chars>",
+  "vechicle": {
+    "color": "<string, required, min 3 chars>",
+    "plate": "<string, required, min 3 chars>",
+    "capacity": "<number, required, min 1>",
+    "vechicleType": "<string, required, one of [car, auto, bike]>"
+  }
+}
+```
+**Example Response**
+```json
+{
+  "captain": {
+    "fullname": {
+      "firstname": "John",
+      "lastname": "Doe"
+    },
+    "email": "john@example.com",
+    "password": "examplePassword",
+    "vechicle": {
+      "color": "Red",
+      "plate": "XYZ123",
+      "capacity": 3,
+      "vechicleType": "car"
+    },
+    "_id": "60c744fe355215000a875d79",
+    "__v": 0
+  }
+}
+```
+
