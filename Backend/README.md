@@ -170,3 +170,112 @@ POST
 }
 ```
 
+# /captains/login
+
+**Description**  
+Login for registered captains
+
+**Method**  
+POST
+
+**Endpoint**  
+`/captains/login`
+
+**Request Body**  
+```json
+{
+  "email": "<string, required, must be valid email>",
+  "password": "<string, required, min 6 chars>"
+}
+```
+
+**Example Response**
+```json
+{
+  "token": "exampleGeneratedToken",
+  "captain": {
+    "fullname": {
+      "firstname": "John",
+      "lastname": "Doe"
+    },
+    "email": "john@example.com",
+    "vechicle": {
+      "color": "Red", // min 3 chars
+      "plate": "XYZ123", // min 3 chars
+      "capacity": 3, // min 1
+      "vechicleType": "car" // one of: car, auto, bike
+    },
+    "_id": "60c744fe355215000a875d79",
+    "__v": 0
+  }
+}
+```
+
+# /captains/profile
+
+**Description**  
+Get captain's profile information
+
+**Method**  
+GET
+
+**Endpoint**  
+`/captains/profile`
+
+**Headers**  
+```json
+{
+  "Authorization": "Bearer <token>"
+}
+```
+
+**Example Response**
+```json
+{
+  "captain": {
+    "fullname": {
+      "firstname": "John",
+      "lastname": "Doe"  
+    },
+    "email": "john@example.com",
+    "vechicle": {
+      "color": "Red",
+      "plate": "XYZ123", 
+      "capacity": 3,
+      "vechicleType": "car"
+    },
+    "_id": "60c744fe355215000a875d79",
+    "__v": 0
+  }
+}
+```
+
+# /captains/logout
+
+**Description**  
+Logout captain and invalidate token
+
+**Method**  
+GET
+
+**Endpoint**  
+`/captains/logout`
+
+**Headers**  
+```json
+{
+  "Authorization": "Bearer <token>"
+}
+```
+
+**Example Response**
+```json
+{
+  "message": "Logout successfully"
+}
+```
+
+Response Status Codes
+
+200: Logout successful
+401: Unauthorized - Invalid token
