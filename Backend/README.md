@@ -200,10 +200,10 @@ POST
     },
     "email": "john@example.com",
     "vechicle": {
-      "color": "Red", // min 3 chars
-      "plate": "XYZ123", // min 3 chars
-      "capacity": 3, // min 1
-      "vechicleType": "car" // one of: car, auto, bike
+      "color": "Red", 
+      "plate": "XYZ123", 
+      "capacity": 3,
+      "vechicleType": "car" 
     },
     "_id": "60c744fe355215000a875d79",
     "__v": 0
